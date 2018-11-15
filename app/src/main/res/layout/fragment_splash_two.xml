@@ -10,10 +10,10 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginStart="22dp"
         android:scaleType="fitXY"
-        android:src="@drawable/splash_img_one" />
+        android:src="@drawable/splash_img_two" />
 
 
     <TextView
@@ -24,7 +24,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_bold"
         android:singleLine="true"
-        android:text="Team Is Power For An Organization"
+        android:text="Manage Your Team In the Best Way"
         android:textColor="@color/txt_color_black"
         android:textSize="18sp" />
 

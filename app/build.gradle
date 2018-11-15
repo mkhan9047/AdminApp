@@ -24,4 +24,5 @@ dependencies {
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
