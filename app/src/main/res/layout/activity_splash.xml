@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activity.SplashActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/splash_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_section">
+
+
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/bottom_section"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/robot_medium"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="Skip"
+            android:layout_marginStart="16dp"
+            android:id="@+id/txt_skip"
+            android:textColor="#fcfcfc"
+            android:textSize="14sp" />
+
+
+        <com.viewpagerindicator.LinePageIndicator
+            android:id="@+id/indicator_pager"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:centered="true"
+            app:lineWidth="17dp"
+            android:layout_weight="1"
+            app:selectedColor="@color/color_white"
+            app:strokeWidth="2dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/robot_medium"
+            android:gravity="end"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:id="@+id/txt_next"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Next"
+            android:textColor="@color/color_white"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
