@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".View.Activity.DashboardActivity"
+    tools:showIn="@layout/app_bar_dashboard">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:background="@drawable/dashboard_top_bg_gradient"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/nav_toggle"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_nav_toggle" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Dashboard"
+            android:paddingStart="4dp"
+            android:textColor="@color/color_white"
+            android:textSize="18sp"
+            android:layout_weight="1"
+            />
+
+
+        <FrameLayout
+            android:layout_width="45dp"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:id="@+id/ic_notification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:padding="8dp"
+                android:scaleType="fitEnd"
+                android:src="@drawable/ic_notification" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="41dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/notification_counter_bg"
+                    android:gravity="center"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    android:text="1"
+                    android:textColor="@color/colorPrimary" />
+            </RelativeLayout>
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

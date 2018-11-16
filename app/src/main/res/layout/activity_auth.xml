@@ -7,5 +7,15 @@
     tools:context=".View.Activity.AuthActivity">
 
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/auth_container"
+        android:layout_height="match_parent">
+
+    </FrameLayout>
+
+
+
+
 
 </LinearLayout>
