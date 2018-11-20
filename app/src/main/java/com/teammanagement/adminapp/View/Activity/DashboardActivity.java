@@ -1,8 +1,11 @@
 package com.teammanagement.adminapp.View.Activity;
 
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,14 +15,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.AnimationSet;
 import android.widget.ImageButton;
 
+import com.teammanagement.adminapp.Helper.Util;
 import com.teammanagement.adminapp.R;
+import com.teammanagement.adminapp.View.CustomViews.CurvedBottomNavigationView;
+import com.teammanagement.adminapp.View.Fragment.DashboardFragment;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ImageButton btnToggle;
+    ImageButton btnToggle, middleButton;
+    CurvedBottomNavigationView dashboard_bottom_navigation;
+    Fragment fragment;
+    boolean middleState = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +46,7 @@ public class DashboardActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(this);
 
         initViews();
@@ -50,6 +61,24 @@ public class DashboardActivity extends AppCompatActivity
                 }
             }
         });
+
+        dashboard_bottom_navigation.inflateMenu(R.menu.bottom_menus);
+        /*we don't wants the shifting animation for the bottom navigation bar so we just wrote a function to remove that*/
+        Util.removeShiftMode(dashboard_bottom_navigation);
+
+        dashboard_bottom_navigation.setItemIconTintList(null);
+
+        middleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                middleState = true;
+                middleButton.animate().rotation(90).setDuration(300).start();
+            }
+        });
+
+        fragmentTransition(new DashboardFragment());
+
+
     }
 
     @Override
@@ -63,7 +92,16 @@ public class DashboardActivity extends AppCompatActivity
     }
 
     private void initViews() {
+        middleButton = findViewById(R.id.middle_btn);
         btnToggle = findViewById(R.id.nav_toggle);
+        dashboard_bottom_navigation = (CurvedBottomNavigationView) findViewById(R.id.dashboard_bottom_navigation);
+    }
+
+    public void fragmentTransition(Fragment fragment){
+        this.fragment = fragment;
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
     }
 
     @Override

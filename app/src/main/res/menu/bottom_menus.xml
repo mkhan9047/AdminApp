@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mnu_dashboard"
+        android:icon="@drawable/nav_dashboard_selector"
+        android:title=""
+     />
+    <item
+        android:id="@+id/mnu_upload"
+        android:icon="@drawable/upload_notice_selector"
+        android:title="" />
+    <item
+        android:id="@+id/nav_slideshow"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="" />
+    <item
+        android:id="@+id/mnu_attenden"
+        android:icon="@drawable/attendence_selector"
+        android:title="" />
+
+    <item
+        android:id="@+id/mnu_chat"
+        android:icon="@drawable/chat_selector"
+        android:title="" />
+</menu>
